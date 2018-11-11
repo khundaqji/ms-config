@@ -1,4 +1,4 @@
-message: Greetings from the PRODUCT-COMMAND-SIDE microservice [using the LOCALHOST config].
+message: Greetings from the command-api microservice [using the LOCALHOST config].
 
 #debug: true
 eureka:
