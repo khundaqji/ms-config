@@ -1,4 +1,4 @@
-message: Greetings from the command-api microservice [using the LOCALHOST config].
+message: Greetings from the command-api microservice [using the container id config].
 
 #debug: true
 eureka:
@@ -9,19 +9,13 @@ eureka:
     preferIpAddress: true
     
 spring:
-    data:
-        mongodb:
-            uri: mongodb://mongodb:27017/products
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/users
 logging:
     level:
         root: INFO
         org.springframework: DEBUG 
-            #aop: DEBUG
-            #dao: DEBUG
-            #orm: DEBUG
-            #amqp: DEBUG
-            #data: DEBUG
-            #transaction: DEBUG
         org.axonframework: INFO
         com.soagrowers: INFO
     file: ./build/logs/command-api.log
