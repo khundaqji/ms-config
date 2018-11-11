@@ -8,7 +8,7 @@ eureka:
   instance:
     preferIpAddress: true
     
-spring:
+spring:     
   data:
     mongodb:
       uri: mongodb://mongodb:27017/users
