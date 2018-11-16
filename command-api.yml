@@ -15,7 +15,7 @@ spring:
 logging:
     level:
         root: INFO
-        org.springframework: DEBUG 
+        org.springframework: INFO 
         org.axonframework: INFO
         com.soagrowers: INFO
     file: ./build/logs/command-api.log
