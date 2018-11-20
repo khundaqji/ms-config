@@ -1,0 +1,25 @@
+message: Greetings from the gateway microservice [using the container id config].
+
+#debug: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+zuul:
+  routes:
+    command-api:
+      path: /commands/**
+  debug:
+    request: true
+    response: true
+
+logging:
+    level:
+        root: INFO
+        org.springframework: INFO 
+        org.axonframework: INFO
+        com.soagrowers: INFO
+    file: ./build/logs/gateway-service.log
