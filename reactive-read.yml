@@ -1,0 +1,21 @@
+message: Greetings from the reactive-read microservice [using the container id config].
+
+#debug: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/users
+logging:
+    level:
+        root: INFO
+        org.springframework: INFO 
+        org.axonframework: INFO
+        com.soagrowers: INFO
+    file: ./build/logs/reactive-read.log
