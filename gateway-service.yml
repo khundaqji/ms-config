@@ -18,8 +18,8 @@ zuul:
 
 logging:
     level:
-        root: DEBUG
-        org.springframework: DEBUG 
-        org.axonframework: DEBUG
-        com.soagrowers: DEBUG
+        root: INFO
+        org.springframework: INFO 
+        org.axonframework: INFO
+        com.soagrowers: INFO
     file: ./build/logs/gateway-service.log
