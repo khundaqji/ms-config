@@ -11,7 +11,7 @@ eureka:
 spring:
   data:
     mongodb:
-      uri: mongodb://mongodb:27017/users
+      uri: mongodb://mongo:27017/users
 logging:
     level:
         root: INFO
