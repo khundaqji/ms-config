@@ -21,10 +21,10 @@ spring:
       uri: lb://command-api
       predicates:
         - Path=/user/**
-    - id: users-add
-      uri: lb://reactive-read
+    - id: onboarding-service
+      uri: lb://onboarding-service
       predicates:
-        - Path=/reactive-read/**
+        - Path=/onboarding-service/**
 
 logging:
     level:
