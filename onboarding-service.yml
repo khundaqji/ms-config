@@ -1,0 +1,17 @@
+message: Greetings from the command-api microservice [using the container id config].
+
+#debug: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+logging:
+    level:
+        root: INFO
+        org.springframework: INFO 
+        org.axonframework: INFO
+        com.soagrowers: INFO
+    file: ./build/logs/command-api.log
