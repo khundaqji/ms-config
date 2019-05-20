@@ -1,10 +1,10 @@
-message: Greetings from the Onboarding microservice [using the container id config].
+message: Greetings from the Authentication microservice [using the container id config].
 
 #debug: true
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
   instance:
     preferIpAddress: true
 
@@ -14,4 +14,4 @@ logging:
         org.springframework: INFO 
         org.axonframework: INFO
         com.soagrowers: INFO
-    file: ./build/logs/onboarding-service.log
+    file: ./build/logs/authentictation-service.log

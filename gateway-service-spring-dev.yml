@@ -1,0 +1,35 @@
+message: Greetings from the gateway-spring microservice [using the container id config].
+
+#debug: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+spring:
+  application:
+    name: gateway-service-spring
+  cloud.gateway:
+    discovery:
+      locator:
+        enabled: true
+        lowerCaseServiceId: true
+    routes:
+    - id: users
+      uri: lb://command-api
+      predicates:
+        - Path=/user/**
+    - id: onboarding-service
+      uri: lb://onboarding-service
+      predicates:
+        - Path=/onboarding-service/**
+
+logging:
+    level:
+        root: INFO
+        org.springframework: INFO 
+        org.axonframework: INFO
+        com.soagrowers: INFO
+    file: ./build/logs/gateway-service-spring.log
