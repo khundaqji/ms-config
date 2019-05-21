@@ -17,14 +17,26 @@ spring:
         enabled: true
         lowerCaseServiceId: true
     routes:
-    - id: users
-      uri: lb://command-api
-      predicates:
-        - Path=/user/**
     - id: onboarding-service
       uri: lb://onboarding-service
       predicates:
         - Path=/onboarding-service/**
+      filters:
+#         - name: RequestRateLimiter
+#           args:
+#             key-resolver: '#{@userKeyResolver}'
+#             redis-rate-limiter.replenishRate: 2
+#             redis-rate-limiter.burstCapacity: 2
+        - name: Hystrix
+          args:
+            name: neighborhoodsFallbackCommand
+            fallbackUri: forward:/fallback/neighborhoods
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
 
 logging:
     level:
