@@ -10,8 +10,10 @@ eureka:
 
 logging:
     level:
-        root: INFO
         org.springframework: INFO 
         org.axonframework: INFO
         com.soagrowers: INFO
+        org.hibernate.cache: TRACE
+        org.hibernate.stat: TRACE
+        org.hibernate.type: TRACE
     file: ./build/logs/onboarding-service.log
