@@ -1,0 +1,19 @@
+message: Greetings from the homescreen microservice [using the container id config].
+
+#debug: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+logging:
+    level:
+        org.springframework: INFO 
+        org.axonframework: INFO
+        com.soagrowers: INFO
+        org.hibernate.cache: TRACE
+        org.hibernate.stat: TRACE
+        org.hibernate.type: TRACE
+    file: ./build/logs/homescreen-service.log

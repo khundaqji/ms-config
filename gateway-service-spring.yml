@@ -31,6 +31,21 @@ spring:
           args:
             name: neighborhoodsFallbackCommand
             fallbackUri: forward:/fallback/neighborhoods
+            
+    - id: homescreen-service
+      uri: lb://homescreen-service
+      predicates:
+        - Path=/homescreen-service/**
+      filters:
+#         - name: RequestRateLimiter
+#           args:
+#             key-resolver: '#{@userKeyResolver}'
+#             redis-rate-limiter.replenishRate: 2
+#             redis-rate-limiter.burstCapacity: 2
+        - name: Hystrix
+          args:
+            name: homescreenFallbackCommand
+            fallbackUri: forward:/fallback/homescreen
         
 management:
   endpoints:
