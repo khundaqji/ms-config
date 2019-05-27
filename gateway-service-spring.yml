@@ -12,6 +12,16 @@ spring:
   application:
     name: gateway-service-spring
   cloud.gateway:
+    globalcors:
+      corsConfigurations:
+        '[/**]':
+          allowed-headers:
+          - "*"
+          allowed-origins:
+          - "*"
+          allowed-methods:
+          - "POST, PUT, ORIGINS"
+          allow-credentials: true
     discovery:
       locator:
         enabled: true
