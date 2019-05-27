@@ -21,7 +21,6 @@ spring:
           - "*"
           allowed-methods:
           - "POST, PUT, ORIGINS"
-          allow-credentials: true
     discovery:
       locator:
         enabled: true
