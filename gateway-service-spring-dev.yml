@@ -12,16 +12,6 @@ spring:
   application:
     name: gateway-service-spring
   cloud.gateway:
-    globalcors:
-      corsConfigurations:
-        '[/**]':
-          allowed-headers:
-          - "*"
-          allowed-origins:
-          - "*"
-          allowed-methods:
-          - "POST, PUT, ORIGINS"
-          
     discovery:
       locator:
         enabled: true
@@ -39,8 +29,8 @@ spring:
 #             redis-rate-limiter.burstCapacity: 2
         - name: Hystrix
           args:
-            name: neighborhoodsFallbackCommand
-            fallbackUri: forward:/fallback/neighborhoods
+            name: firstLaunchFallbackCommand
+            fallbackUri: forward:/fallback/firstLaunchFallback
             
     - id: homescreen-service
       uri: lb://homescreen-service
